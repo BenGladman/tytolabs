@@ -9,8 +9,11 @@
 
 <footer>
   <a href="https://github.com/BenGladman">GitHub</a>
+  •
   <a href="https://stackoverflow.com/users/story/2907553">Stack Overflow</a>
+  •
   <a href="https://www.linkedin.com/in/ben-gladman/">LinkedIn</a>
+  •
   <a href="mailto:ben.gladman@gmail.com">email</a>
 </footer>
 
@@ -53,9 +56,13 @@
   }
 
   footer {
+    color: #7c7c7c;
+    display: flex;
+    gap: 5px;
     inset: auto 0 20px 0;
+    justify-content: center;
     position: absolute;
-    text-align: center;
+    white-space: nowrap;
   }
 
   a {
