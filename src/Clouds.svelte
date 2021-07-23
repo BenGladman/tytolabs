@@ -4,6 +4,7 @@
   const MAX_X = 1000;
   const MAX_CLOUDS = 5;
   const INITIAL_CLOUDS = 2;
+  const FRAME_DURATION = 1 / 20;
 
   let svg: SVGSVGElement;
   let clouds: Cloud[] = [];
@@ -18,14 +19,16 @@
 
   function animate(ts: number) {
     const dt = (ts - lastTs) / 1000;
-    lastTs = ts;
+    if (dt > FRAME_DURATION) {
+      lastTs = ts;
 
-    clouds = clouds.map((cloud) => cloud.blow(breezeX * dt, breezeZ * dt));
+      clouds = clouds.map((cloud) => cloud.blow(breezeX * dt, breezeZ * dt));
 
-    clouds = clouds.filter((cloud) => !cloud.isOffscreen);
+      clouds = clouds.filter((cloud) => !cloud.isOffscreen);
 
-    if (clouds.length < MAX_CLOUDS && Math.random() > 0.99) {
-      clouds = [new Cloud(MAX_X), ...clouds];
+      if (clouds.length < MAX_CLOUDS && Math.random() > 0.99) {
+        clouds = [new Cloud(MAX_X), ...clouds];
+      }
     }
 
     requestAnimationFrame(animate);
