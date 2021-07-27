@@ -1,61 +1,62 @@
-let counter = 0;
+let counter = Math.ceil(Math.random() * 10000);
+
+const PERSPECTIVE = 1000;
+const FARTHEST = -1000;
+const FAR = -100;
+const NEAR = 800;
+const NEAREST = 950;
+const X_RANGE = 1000;
+const Y_RANGE = 100;
 
 export class Cloud {
-  readonly id = `cloud${counter++}`;
+  readonly id = counter++;
 
-  private maxX: number;
-  private x = 50000 - Math.random() * 100000;
-  private y = -Math.random() * 100;
-  private z = 1000;
-  private width = Math.random() * 5000 + 2000;
+  private x: number;
+  private y: number;
+  private z: number;
+  private width = Math.random() * 800 + 200;
   private height = this.width * (0.3 + 0.3 * Math.random());
 
-  constructor(maxX: number, isInit = false) {
-    this.maxX = maxX;
+  constructor(isInit = false) {
     if (isInit) {
-      this.z = 400 + Math.random() * 300;
+      this.z = NEAR - Math.random() * (NEAR - FAR);
     } else {
-      this.z = 1000;
+      this.z = FARTHEST;
     }
-    this.x = ((0.5 - Math.random()) * this.maxX) / this.scale;
+    this.y = (0.5 - Math.random()) * Y_RANGE;
+    this.x = (0.5 - Math.random()) * X_RANGE;
   }
 
-  get svgProps() {
+  get ellipseProps() {
     return {
-      cx: this.x,
-      cy: this.y,
+      cx: 0,
+      cy: 0,
       rx: this.width,
       ry: this.height,
-      opacity: this.opacity,
-      transform: `scale(${this.scale})`,
     };
   }
 
-  get scale() {
-    return 100 / this.z;
+  get svgStyleProp() {
+    return `opacity: ${this.opacity}; transform: perspective(${PERSPECTIVE}px) translate3d(${this.x}px,${this.y}px,${this.z}px);`;
   }
 
   get opacity() {
-    if (this.z >= 700) {
-      return Math.max(0, (1000 - this.z) / 300);
+    if (this.z < FAR) {
+      return Math.max(0, (FARTHEST - this.z) / (FARTHEST - FAR));
     }
-    if (this.z <= 100) {
-      return Math.max(0, this.z / 100);
+    if (this.z > NEAR) {
+      return Math.max(0, (NEAREST - this.z) / (NEAREST - NEAR));
     }
     return 1;
   }
 
   blow(dx: number, dz: number) {
     this.x += dx;
-    this.z = Math.max(0, this.z - dz);
+    this.z += dz;
     return this;
   }
 
   get isOffscreen() {
-    return (
-      this.z <= 1 ||
-      (this.x + this.width) * this.scale < -this.maxX ||
-      (this.x - this.width) * this.scale > this.maxX
-    );
+    return this.z > NEAREST || this.z < FARTHEST;
   }
 }

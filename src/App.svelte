@@ -6,18 +6,22 @@
 
 <header>
   <h1>Tyto Labs</h1>
+  <p>Software design and development</p>
 </header>
 
 <main />
 
 <footer>
-  <a href="https://github.com/BenGladman">GitHub</a>
-  •
-  <a href="https://stackoverflow.com/users/story/2907553">Stack Overflow</a>
-  •
-  <a href="https://www.linkedin.com/in/ben-gladman/">LinkedIn</a>
-  •
-  <a href="mailto:ben.gladman@gmail.com">email</a>
+  <p class="links">
+    <a href="https://github.com/BenGladman">GitHub</a>
+    •
+    <a href="https://stackoverflow.com/users/story/2907553">Stack Overflow</a>
+    •
+    <a href="https://www.linkedin.com/in/ben-gladman/">LinkedIn</a>
+    •
+    <a href="mailto:ben.gladman@gmail.com">email</a>
+  </p>
+  <p class="registration">Company number 13523740</p>
 </footer>
 
 <style>
@@ -41,6 +45,7 @@
     inset: 0;
     min-height: 300px;
     position: absolute;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   main {
@@ -59,18 +64,32 @@
   }
 
   header {
-    inset: 20px 0 auto 0;
+    inset: 2rem 0 auto 0;
     position: absolute;
     text-align: center;
   }
 
   footer {
+    inset: auto 0 2rem 0;
+    position: absolute;
+  }
+
+  p {
+    white-space: nowrap;
+    margin: 1rem 0 0 0;
+  }
+
+  .links {
     display: flex;
     gap: 5px;
-    inset: auto 0 20px 0;
     justify-content: center;
-    position: absolute;
     white-space: nowrap;
+  }
+
+  .registration {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    text-align: center;
   }
 
   a {
