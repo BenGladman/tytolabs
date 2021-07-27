@@ -1,12 +1,11 @@
 <script lang="ts">
   import { Cloud } from "./Cloud";
 
-  const MAX_CLOUDS = 10;
+  const MAX_CLOUDS = 6;
   const INITIAL_CLOUDS = 3;
-  const FRAME_DURATION = 1 / 24;
+  const FRAME_DURATION = 1 / 10;
   const FORMATION_PERIOD = 5000;
 
-  let svg: SVGSVGElement;
   let clouds: Cloud[] = [];
   export let breezeX = 0;
   export let breezeZ = 10;
@@ -29,7 +28,7 @@
 
       if (
         clouds.length < MAX_CLOUDS &&
-        Math.random() > 0.95 &&
+        Math.random() > 0.9 &&
         ts - lastCloudFormed > FORMATION_PERIOD
       ) {
         newClouds.unshift(new Cloud());
@@ -45,11 +44,7 @@
   animate(lastTs);
 </script>
 
-<svg
-  bind:this={svg}
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="-1000 -1000 2000 2000"
->
+<svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
   <defs>
     <radialGradient id="Gradient" cx="0.5" cy="0.5" r="0.5" fx="0.4" fy="0.2">
       <stop offset="0%" stop-color="hsla(231, 30%, 99%, 1)" />
@@ -60,41 +55,44 @@
 </svg>
 
 {#each clouds as cloud (cloud.id)}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="-1000 -1000 2000 2000"
-    style={cloud.svgStyleProp}
-  >
-    <filter id="filter{cloud.id}">
-      <feTurbulence
-        type="turbulence"
-        baseFrequency="0.003"
-        numOctaves="5"
-        result="turbulence"
-        seed={cloud.id}
+  <div class="svg-holder" style={cloud.svgStyleProp}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1000 -1000 2000 2000">
+      <filter id="filter{cloud.id}">
+        <feTurbulence
+          type="turbulence"
+          baseFrequency="0.003"
+          numOctaves="5"
+          result="turbulence"
+          seed={cloud.id}
+        />
+        <feDisplacementMap
+          in2="turbulence"
+          in="SourceGraphic"
+          scale="300"
+          xChannelSelector="R"
+          yChannelSelector="A"
+        />
+      </filter>
+      <ellipse
+        {...cloud.ellipseProps}
+        fill="url(#Gradient)"
+        style="filter: url(#filter{cloud.id})"
       />
-      <feDisplacementMap
-        in2="turbulence"
-        in="SourceGraphic"
-        scale="300"
-        xChannelSelector="R"
-        yChannelSelector="A"
-      />
-    </filter>
-    <ellipse
-      {...cloud.ellipseProps}
-      fill="url(#Gradient)"
-      style="filter: url(#filter{cloud.id})"
-    />
-  </svg>
+    </svg>
+  </div>
 {/each}
 
 <style>
-  svg {
+  .svg-holder {
     position: fixed;
     width: 1000px;
     height: 1000px;
     top: calc(50% - 500px);
     left: calc(50% - 500px);
+  }
+
+  .svg-holder svg {
+    width: 1000px;
+    height: 1000px;
   }
 </style>

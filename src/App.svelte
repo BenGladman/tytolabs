@@ -91,6 +91,7 @@
 
   img {
     filter: drop-shadow(var(--drop-shadow));
+    padding: 1rem;
   }
 
   .links {
@@ -102,7 +103,7 @@
 
   .registration {
     font-size: 0.8rem;
-    margin-top: 0.3rem;
+    margin-top: 0;
     text-align: center;
   }
 
