@@ -1,5 +1,9 @@
 <script lang="ts">
   import Clouds from "./Clouds.svelte";
+  import emailSvg from "./email.svg";
+  import githubSvg from "./github.svg";
+  import linkedinSvg from "./linkedin.svg";
+  import stackoverflowSvg from "./stackoverflow.svg";
 </script>
 
 <Clouds />
@@ -13,13 +17,18 @@
 
 <footer>
   <p class="links">
-    <a href="https://github.com/BenGladman">GitHub</a>
-    •
-    <a href="https://stackoverflow.com/users/story/2907553">Stack Overflow</a>
-    •
-    <a href="https://www.linkedin.com/in/ben-gladman/">LinkedIn</a>
-    •
-    <a href="mailto:ben.gladman@gmail.com">email</a>
+    <a href="https://github.com/BenGladman">
+      <img src={githubSvg} alt="GitHub" />
+    </a>
+    <a href="https://stackoverflow.com/users/story/2907553">
+      <img src={stackoverflowSvg} alt="Stack Overflow" />
+    </a>
+    <a href="https://www.linkedin.com/in/ben-gladman/">
+      <img src={linkedinSvg} alt="LinkedIn" />
+    </a>
+    <a href="mailto:ben.gladman@gmail.com">
+      <img src={emailSvg} alt="email" />
+    </a>
   </p>
   <p class="registration">Company number 13523740</p>
 </footer>
@@ -33,6 +42,7 @@
     --accent: hsl(20, 100%, 60%);
     --primary: hsl(200, 20%, 80%);
     --anchor: hsl(240, 100%, 85%);
+    --drop-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   :global(body) {
@@ -45,7 +55,7 @@
     inset: 0;
     min-height: 300px;
     position: absolute;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--drop-shadow);
   }
 
   main {
@@ -79,6 +89,10 @@
     margin: 1rem 0 0 0;
   }
 
+  img {
+    filter: drop-shadow(var(--drop-shadow));
+  }
+
   .links {
     display: flex;
     gap: 5px;
@@ -94,11 +108,9 @@
 
   a {
     color: var(--anchor);
-    display: block;
-    text-decoration: none;
   }
 
   a:hover {
-    text-decoration: underline;
+    filter: brightness(120%);
   }
 </style>
