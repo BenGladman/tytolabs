@@ -1,47 +1,13 @@
 <script lang="ts">
   import { Cloud } from "./Cloud";
 
-  const MAX_CLOUDS = 6;
-  const INITIAL_CLOUDS = 3;
-  const FRAME_DURATION = 1 / 10;
-  const FORMATION_PERIOD = 5000;
+  const NUM_CLOUDS = 6;
 
   let clouds: Cloud[] = [];
-  export let breezeX = 0;
-  export let breezeZ = 10;
 
-  for (let i = 0; i < INITIAL_CLOUDS; i += 1) {
+  for (let i = 0; i < NUM_CLOUDS; i += 1) {
     clouds.push(new Cloud(true));
   }
-
-  let lastTs = performance.now();
-  let lastCloudFormed = performance.now();
-
-  function animate(ts: number) {
-    const dt = (ts - lastTs) / 1000;
-    if (dt > FRAME_DURATION) {
-      lastTs = ts;
-
-      const newClouds = clouds
-        .map((cloud) => cloud.blow(breezeX * dt, breezeZ * dt))
-        .filter((cloud) => !cloud.isOffscreen);
-
-      if (
-        clouds.length < MAX_CLOUDS &&
-        Math.random() > 0.9 &&
-        ts - lastCloudFormed > FORMATION_PERIOD
-      ) {
-        newClouds.unshift(new Cloud());
-        lastCloudFormed = ts;
-      }
-
-      clouds = newClouds;
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  animate(lastTs);
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
@@ -89,10 +55,30 @@
     height: 1000px;
     top: calc(50% - 500px);
     left: calc(50% - 500px);
+    animation: move var(--duration) linear var(--offset) infinite;
   }
 
   .svg-holder svg {
     width: 1000px;
     height: 1000px;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0;
+      transform: perspective(var(--perspective))
+        translate3d(var(--x), var(--y), var(--farthest));
+    }
+    50% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: perspective(var(--perspective))
+        translate3d(var(--x), var(--y), var(--nearest));
+    }
   }
 </style>
