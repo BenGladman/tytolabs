@@ -1,12 +1,14 @@
 <script lang="ts">
-  import { Cloud } from "./Cloud";
+  import { createCloud } from "./createCloud";
 
-  const NUM_CLOUDS = 6;
+  const NUM_CLOUDS = 8;
 
-  let clouds: Cloud[] = [];
+  let clouds = Array.from(Array(NUM_CLOUDS), () => createCloud(true)).sort(
+    (c1, c2) => c1.offset - c2.offset
+  );
 
-  for (let i = 0; i < NUM_CLOUDS; i += 1) {
-    clouds.push(new Cloud(true));
+  function animationEnd(id: number) {
+    clouds = [createCloud(), ...clouds.filter((c) => c.id !== id)];
   }
 </script>
 
@@ -21,7 +23,11 @@
 </svg>
 
 {#each clouds as cloud (cloud.id)}
-  <div class="svg-holder" style={cloud.svgStyleProp}>
+  <div
+    class="svg-holder"
+    style={cloud.style}
+    on:animationend={() => animationEnd(cloud.id)}
+  >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1000 -1000 2000 2000">
       <filter id="filter{cloud.id}">
         <feTurbulence
@@ -40,7 +46,10 @@
         />
       </filter>
       <ellipse
-        {...cloud.ellipseProps}
+        cx={0}
+        cy={0}
+        rx={cloud.width}
+        ry={cloud.height}
         fill="url(#Gradient)"
         style="filter: url(#filter{cloud.id})"
       />
@@ -55,7 +64,7 @@
     height: 1000px;
     top: calc(50% - 500px);
     left: calc(50% - 500px);
-    animation: move var(--duration) linear var(--offset) infinite;
+    animation: move var(--duration) linear var(--offset) 1;
   }
 
   .svg-holder svg {
@@ -72,7 +81,7 @@
     50% {
       opacity: 1;
     }
-    90% {
+    98% {
       opacity: 1;
     }
     100% {
