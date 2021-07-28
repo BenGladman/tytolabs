@@ -1,11 +1,10 @@
 <script lang="ts">
   import { createCloud } from "./createCloud";
 
-  const NUM_CLOUDS = 8;
+  const NUM_CLOUDS = window.innerWidth > 1000 ? 8 : 4;
 
-  let clouds = Array.from(Array(NUM_CLOUDS), () => createCloud(true)).sort(
-    (c1, c2) => c1.offset - c2.offset
-  );
+  let clouds = Array.from(Array(NUM_CLOUDS), () => createCloud(true));
+  clouds.sort((c1, c2) => c2.offset - c1.offset);
 
   function animationEnd(id: number) {
     clouds = [createCloud(), ...clouds.filter((c) => c.id !== id)];

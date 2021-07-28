@@ -5,7 +5,7 @@ let counter = Math.ceil(Math.random() * 10000);
 const PERSPECTIVE = 1000;
 const FARTHEST = -5000;
 const NEAREST = 950;
-const ANIMATION_DURATION = 30;
+const ANIMATION_DURATION = 60;
 
 interface Cloud {
   readonly id: number;
