@@ -89,8 +89,4 @@
         translate3d(var(--x), var(--y), var(--nearest));
     }
   }
-
-  stop {
-    transition: stop-color 5s ease;
-  }
 </style>

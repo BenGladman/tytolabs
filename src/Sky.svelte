@@ -17,18 +17,6 @@
 </div>
 
 <style>
-  /* stylelint-disable */
-  @property --sky-top {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: transparent;
-  }
-
-  @property --sky-bottom {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: transparent;
-  }
   div {
     --sky-top: hsl(224, 100%, 16%);
     --sky-bottom: hsl(203, 71%, 40%);
@@ -46,8 +34,6 @@
     min-height: 300px;
     position: fixed;
     text-shadow: var(--drop-shadow);
-
-    transition: --sky-top 5s ease, --sky-bottom 5s ease, color 5s ease;
   }
 
   .sunrise {

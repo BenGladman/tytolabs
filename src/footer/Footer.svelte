@@ -59,6 +59,5 @@
     fill: var(--primary);
     filter: drop-shadow(var(--drop-shadow));
     padding: 1rem;
-    transition: fill 5s ease;
   }
 </style>
