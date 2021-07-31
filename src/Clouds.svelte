@@ -14,9 +14,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
   <defs>
     <radialGradient id="Gradient" cx="0.5" cy="0.5" r="0.5" fx="0.4" fy="0.2">
-      <stop offset="0%" stop-color="hsla(231, 30%, 99%, 1)" />
-      <stop offset="10%" stop-color="hsla(231, 20%, 95%, 0.8)" />
-      <stop offset="50%" stop-color="hsla(252, 6%, 45%, 0)" />
+      <stop offset="0%" stop-color="var(--cloud1)" />
+      <stop offset="10%" stop-color="var(--cloud2)" />
+      <stop offset="50%" stop-color="var(--cloud3)" />
     </radialGradient>
   </defs>
 </svg>
@@ -88,5 +88,9 @@
       transform: perspective(var(--perspective))
         translate3d(var(--x), var(--y), var(--nearest));
     }
+  }
+
+  stop {
+    transition: stop-color 5s ease;
   }
 </style>
