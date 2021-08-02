@@ -31,7 +31,7 @@
     background: linear-gradient(var(--sky-top), var(--sky-bottom));
     color: var(--primary);
     inset: 0;
-    min-height: 300px;
+    min-height: 400px;
     position: fixed;
     text-shadow: var(--drop-shadow);
   }

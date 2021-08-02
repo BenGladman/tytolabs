@@ -1,17 +1,23 @@
 <script lang="ts">
   import { cycleLighting } from "./lighting";
+  import logoPath from "./tyto.svg";
 </script>
 
 <header>
-  <h1 on:click={() => cycleLighting()}>Tyto Labs</h1>
+  <img src={logoPath} alt="Tyto Logo" on:click={() => cycleLighting()} />
+  <h1>Tyto Labs</h1>
   <p>Software design and development</p>
 </header>
 
 <style>
   header {
-    inset: 2rem 0 auto 0;
+    inset: 1rem 0 auto 0;
     position: absolute;
     text-align: center;
+  }
+
+  img {
+    filter: drop-shadow(var(--drop-shadow));
   }
 
   h1 {
