@@ -28,7 +28,7 @@ export function Organisation({
         name
       )}
 
-      <span className={styles.bullet}>▪</span>
+      <span className={styles.bullet}> ▪ </span>
 
       {role && <span className={styles.role}>{role}</span>}
 
