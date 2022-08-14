@@ -1,0 +1,1 @@
+import{a as n,j as e}from"../chunk-9e017cb6.js";function o({is404:r}){return r?n("main",{children:[e("h2",{children:"404 Page Not Found"}),e("p",{children:"This page could not be found."})]}):n("main",{children:[e("h2",{children:"500 Internal Server Error"}),e("p",{children:"Something went wrong."})]})}export{o as Page};

@@ -1,0 +1,1 @@
+const t="_footer_acfmm_1",s="_p_acfmm_5",a="_links_acfmm_10",_="_registration_acfmm_18";var r={footer:t,p:s,links:a,registration:_};const o="_header_1yfmu_1",e="_tag_1yfmu_6";var n={header:o,tag:e};export{n as a,r as s};
