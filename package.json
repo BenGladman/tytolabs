@@ -5,7 +5,7 @@
     "build": "vite build",
     "server": "ts-node ./server",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server",
-    "deploy": "npm run build && gh-pages -d dist/client"
+    "deploy": "npm run build && gh-pages --dist dist/client --dotfiles"
   },
   "dependencies": {
     "@types/compression": "^1.7.2",
