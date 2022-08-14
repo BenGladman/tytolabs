@@ -1,0 +1,117 @@
+:root {
+  --color-grey1: #000;
+  --color-grey2: #484b4a;
+  --color-grey3: #acaead;
+  --color-grey4: #fcfefd;
+  --color-blue1: #344491;
+  --color-blue2: #84a1fe;
+  --color-green1: #266336;
+  --color-green2: #84fea1;
+  --drop-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --font: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-sans;
+  --font-size-1: 0.5rem;
+  --font-size-2: 0.7rem;
+  --font-size-3: 0.8rem;
+  --font-size-4: 1.2rem;
+  --font-size-5: 1.5rem;
+  --font-size-6: 2rem;
+  --font-weight-1: 100;
+  --font-weight-2: 300;
+  --font-weight-3: 600;
+  --font-weight-4: 700;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 16px;
+  --space-5: 32px;
+  --space-6: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-grey4);
+  color: var(--color-grey1);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-2);
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+main {
+  flex: 1 0 0;
+  margin: 0 auto;
+  max-width: 35rem;
+  padding: var(--space-6) var(--space-4);
+  width: -webkit-fill-available;
+}
+
+p,
+ul,
+li {
+  margin: 0.5em 0;
+}
+
+a {
+  color: var(--color-blue1);
+  text-decoration: none;
+}
+
+a:focus-visible,
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  color: var(--color-grey2);
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-1);
+  line-height: 1.25;
+  margin: var(--space-1) 0 var(--space-4);
+}
+
+h2 {
+  border-bottom: var(--space-1) solid var(--color-grey3);
+  color: var(--color-grey2);
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-2);
+  line-height: 1.25;
+  padding: var(--space-2) 0 var(--space-4);
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+h3 {
+  color: var(--color-grey2);
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-4);
+  line-height: 1.25;
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+h4 {
+  color: var(--color-grey2);
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-3);
+  line-height: 1.25;
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+ul {
+  padding: 0 0 0 var(--space-4);
+  list-style-type: square;
+}
+
+li::marker {
+  color: var(--color-grey3);
+}

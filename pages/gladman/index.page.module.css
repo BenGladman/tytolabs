@@ -1,0 +1,43 @@
+article {
+  margin-top: var(--space-6);
+}
+
+h2,
+h3,
+h4 {
+  break-after: avoid;
+}
+
+h2 {
+  align-items: baseline;
+  column-gap: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+}
+
+address {
+  color: var(--color-green1);
+  font-style: normal;
+  text-align: center;
+}
+
+section {
+  break-inside: avoid;
+}
+
+.download {
+  color: var(--color-grey2);
+  float: right;
+  font-size: var(--font-size-5);
+}
+
+@media print {
+  body {
+    background-color: unset;
+  }
+  header,
+  footer,
+  .download {
+    display: none;
+  }
+}

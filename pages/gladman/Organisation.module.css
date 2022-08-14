@@ -1,0 +1,11 @@
+.bullet {
+  color: var(--color-grey3);
+}
+
+.organisation {
+  color: var(--color-blue1);
+}
+
+.level {
+  font-size: var(--font-size-3);
+}

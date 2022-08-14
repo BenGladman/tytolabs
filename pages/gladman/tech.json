@@ -1,0 +1,67 @@
+{
+  "android": { "name": "Android", "href": "https://developer.android.com/" },
+  "angularjs": { "name": "AngularJS", "href": "https://angularjs.org/" },
+  "aws": { "name": "AWS", "href": "https://aws.amazon.com/" },
+  "c#": {
+    "name": "C#",
+    "href": "https://docs.microsoft.com/en-us/dotnet/csharp/"
+  },
+  "cssmodules": {
+    "name": "CSS Modules",
+    "href": "https://github.com/css-modules/css-modules"
+  },
+  "cypress": { "name": "Cypress", "href": "https://www.cypress.io/" },
+  "docker": { "name": "Docker", "href": "https://www.docker.com/" },
+  "electron": { "name": "Electron", "href": "https://www.electronjs.org/" },
+  "emotion": { "name": "Emotion", "href": "https://emotion.sh/" },
+  "feathers": { "name": "FeathersJS", "href": "https://feathersjs.com/" },
+  "gha": {
+    "name": "GitHub Actions",
+    "href": "https://docs.github.com/en/actions"
+  },
+  "jenkins": { "name": "Jenkins", "href": "https://www.jenkins.io/" },
+  "js": { "name": "JavaScript", "href": "https://tc39.es/ecma262/" },
+  "k8s": { "name": "Kubernetes", "href": "https://kubernetes.io/" },
+  "next": { "name": "Next.js", "href": "https://nextjs.org/" },
+  "node": { "name": "Node.js", "href": "https://nodejs.org/" },
+  "openapi": { "name": "OpenAPI", "href": "https://www.openapis.org/" },
+  "postgres": { "name": "PostgreSQL", "href": "https://www.postgresql.org/" },
+  "r3f": {
+    "name": "react-three-fiber",
+    "href": "https://docs.pmnd.rs/react-three-fiber"
+  },
+  "react": { "name": "React", "href": "https://reactjs.org/" },
+  "redux": { "name": "Redux", "href": "https://redux.js.org/" },
+  "reduxobservable": {
+    "name": "redux-observable",
+    "href": "https://redux-observable.js.org/"
+  },
+  "rxjs": { "name": "RxJS", "href": "https://rxjs.dev/" },
+  "sass": { "name": "Sass", "href": "https://sass-lang.com/" },
+  "selenium": { "name": "Selenium", "href": "https://www.selenium.dev/" },
+  "storybook": { "name": "Storybook", "href": "https://storybook.js.org/" },
+  "styledcomponents": {
+    "name": "styled-components",
+    "href": "https://styled-components.com/"
+  },
+  "three": { "name": "THREE.js", "href": "https://threejs.org/" },
+  "teamcity": {
+    "name": "TeamCity",
+    "href": "https://www.jetbrains.com/teamcity/"
+  },
+  "ts": { "name": "TypeScript", "href": "https://www.typescriptlang.org/" },
+  "unidata": {
+    "name": "UniData",
+    "href": "https://www.rocketsoftware.com/products/rocket-unidata-0/rocket-unidata"
+  },
+  "uwp": {
+    "name": "UWP",
+    "href": "https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide"
+  },
+  "webdriver": { "name": "WebdriverIO", "href": "https://webdriver.io/" },
+  "webrtc": { "name": "WebRTC", "href": "https://webrtc.org/" },
+  "xamarin": {
+    "name": "Xamarin",
+    "href": "https://dotnet.microsoft.com/en-us/apps/xamarin"
+  }
+}
