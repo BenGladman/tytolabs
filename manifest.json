@@ -9,7 +9,7 @@
       "_chunk-43108f40.js"
     ],
     "css": [
-      "assets/renderer/_default.page.client.06286d90.css"
+      "assets/renderer/_default.page.client.67d1e2d3.css"
     ],
     "assets": [
       "assets/tyto.7ed42989.svg"
@@ -25,7 +25,7 @@
     ]
   },
   "pages/gladman/index.page.tsx": {
-    "file": "assets/pages/gladman/index.page.3ccc4c80.js",
+    "file": "assets/pages/gladman/index.page.6585835f.js",
     "src": "pages/gladman/index.page.tsx",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -41,7 +41,7 @@
     ]
   },
   "pages/index/index.page.tsx": {
-    "file": "assets/pages/index/index.page.c8c2144b.js",
+    "file": "assets/pages/index/index.page.a35f1245.js",
     "src": "pages/index/index.page.tsx",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -49,11 +49,11 @@
       "_chunk-9e017cb6.js"
     ],
     "css": [
-      "assets/pages/index/index.page.a0efa5c7.css"
+      "assets/pages/index/index.page.63dd3d74.css"
     ]
   },
   "node_modules/vite-plugin-ssr/dist/esm/client/router/entry.js": {
-    "file": "assets/entry-client-routing.e29c8097.js",
+    "file": "assets/entry-client-routing.60facb3a.js",
     "src": "node_modules/vite-plugin-ssr/dist/esm/client/router/entry.js",
     "isEntry": true,
     "imports": [
@@ -67,7 +67,7 @@
     ]
   },
   "node_modules/vite-plugin-ssr/dist/esm/client/entry.js": {
-    "file": "assets/entry-server-routing.a423eed6.js",
+    "file": "assets/entry-server-routing.0ec83fc3.js",
     "src": "node_modules/vite-plugin-ssr/dist/esm/client/entry.js",
     "isEntry": true,
     "imports": [

@@ -1,0 +1,1 @@
+import{j as s,a,F as r}from"../../chunk-9e017cb6.js";const n="_sky_1mmra_1";var t={sky:n};function e(){return s("div",{className:t.sky})}function i(){return a(r,{children:[s(e,{}),s("main",{})]})}export{i as Page};
