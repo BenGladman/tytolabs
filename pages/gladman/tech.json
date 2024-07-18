@@ -63,5 +63,9 @@
   "xamarin": {
     "name": "Xamarin",
     "href": "https://dotnet.microsoft.com/en-us/apps/xamarin"
+  },
+  "vite": {
+    "name": "Vite",
+    "href": "https://vitejs.dev"
   }
 }

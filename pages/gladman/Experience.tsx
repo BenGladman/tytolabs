@@ -8,7 +8,7 @@ export function Experience() {
     <article>
       <section>
         <h4>
-          <Period from="2021-08" to="Present" suffix="(Contract)" />
+          <Period from="2021-08" to="2024-06" suffix="(Contract)" />
           <Organisation
             name="Standard Bots"
             href="https://standardbots.com/"
@@ -26,6 +26,7 @@ export function Experience() {
             "postgres",
             "feathers",
             "next",
+            "vite",
             "webrtc",
             "gha",
           ]}
