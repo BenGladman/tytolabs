@@ -88,7 +88,7 @@ export function Experience() {
         </p>
         <ul>
           <li>
-            <em>New Application Shell</em> – rewrite of the layout engine and
+            <em>New application shell</em> – rewrite of the layout engine and
             service adapters from an older framework into React and RxJS, to
             improve maintainability. The shell is highly configurable, allowing
             the user to add, remove and rearrange tens of components across
