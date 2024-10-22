@@ -38,38 +38,27 @@ export function Experience() {
         <ul>
           <li>
             <em>Visualization</em> – using Three.js to visualize the state of
-            the robot arm.
+            the robot arm and its environment.
+          </li>
+          <li>
+            <em>Integration</em> – developing the Node.js backend to integrate
+            with the robot arm and linked devices, to run routines and ad-hoc
+            commands.
           </li>
           <li>
             <em>Simulation</em> – implementing hardware and communication
-            simulations of the robot arm and linked devices in Node to use in
-            testing and development.
+            simulations of the robot arm and linked devices in Node.js for use
+            in testing and development.
           </li>
           <li>
-            <em>Routine Editor</em> – creating an approachable interface for
-            less technical users to program the robot.
+            <em>Routine Editor</em> – creating an approachable no-code/low-code
+            interface for less technical users to be able to program the robot.
           </li>
           <li>
             <em>Migration to self-hosted</em> – migrated away from Firebase to a
             fully self-hosted solution using PostgreSQL and FeathersJS.
           </li>
         </ul>
-      </section>
-
-      <section>
-        <h4>
-          <Period from="2021-04" to="2021-07" />
-          <Organisation
-            name="Deutsche Bank"
-            href="https://www.db.com/"
-            role="Front End Developer"
-          />
-        </h4>
-        <Technolgies items={["electron", "ts"]} />
-        <p>
-          Worked on the Product Pricing application in the Quantitative Analysis
-          team.
-        </p>
       </section>
 
       <section>
